@@ -27,4 +27,8 @@ public class PersonService {
         people.remove(id);
     }
 
+    public void updatePerson(int id, Person person) {
+        people.set(id, person);
+    }
+
 }
