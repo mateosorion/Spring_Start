@@ -1,33 +1,38 @@
-package com.tesla.crud.person;
+package com.tesla.crud.models;
 
-public class Person {
+import jakarta.persistence.*;
 
-    private int id;
+@Entity
+@Table(name = "user")
+public class UserModel {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column
     private String name;
+
+    @Column
     private String lastName;
+
+    @Column
     private int age;
+
+    @Column
     private int dni;
+
+    @Column
     private String gender;
+
+    @Column
     private String email;
 
-    public Person() {
-    }
-
-    public Person(int id, String name, String lastName, int age, int dni, String gender, String email) {
-        this.id = id;
-        this.name = name;
-        this.lastName = lastName;
-        this.age = age;
-        this.dni = dni;
-        this.gender = gender;
-        this.email = email;
-    }
-
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -79,3 +84,5 @@ public class Person {
         this.email = email;
     }
 }
+
+
